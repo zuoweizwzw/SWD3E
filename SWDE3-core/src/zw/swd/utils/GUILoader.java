@@ -6,6 +6,6 @@ public class GUILoader {
 
 	public static Paper loadControl()
 	{
-		
+		return null;
 	}
 }
