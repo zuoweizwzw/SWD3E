@@ -11,7 +11,7 @@ import zw.swd.utils.FontLoader;
 public abstract class Paper extends Group{
 
 	protected Animation currentAnimation;
-	
+	public Vector2 scaleSize;
 	@Override
 	public void draw(Batch batch, float parentAlpha) {
 		if(!this.isVisible()) return;

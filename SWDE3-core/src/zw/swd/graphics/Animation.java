@@ -116,6 +116,8 @@ public class Animation {
 		frame.draw(x,y,batch,color,parentAlpha);
 	}
 	
+	
+	
 	public void nextFrame(float delta) {
 		if (stopped) {
 			return;
