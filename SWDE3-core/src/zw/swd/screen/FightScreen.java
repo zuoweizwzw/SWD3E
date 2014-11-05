@@ -86,6 +86,7 @@ public class FightScreen extends SWDScreen{
 			fightRole.setAnimation(Cache.fightRoles.get(role.resCode+"/fight/stand_left"));
 			this.spriteMgr.addActor(fightRole);
 		}
+		this.guiMgr.addActor(Cache.controls.get("fightstateframe"));
 	}
 
 }

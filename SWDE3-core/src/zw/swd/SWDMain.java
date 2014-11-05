@@ -14,6 +14,7 @@ import zw.swd.utils.FaceLoader;
 import zw.swd.utils.FightMapLoader;
 import zw.swd.utils.FightRoleLoader;
 import zw.swd.utils.FontLoader;
+import zw.swd.utils.GUILoader;
 import zw.swd.utils.MagicLoader;
 
 import com.badlogic.gdx.ApplicationAdapter;
@@ -62,9 +63,10 @@ public class SWDMain extends Game {
 	{
 		FontLoader.loadFont();
 		FaceLoader.loadFaces();
-		MagicLoader.loadMagics("51","78");
+//		MagicLoader.loadMagics("51","78");
 		FightMapLoader.loadFightMap("1-1");
 		FightRoleLoader.loadFightRole("001");
+		GUILoader.loadControls();
 	}
 	
 	public void changeScreen(SWDScreen screen)

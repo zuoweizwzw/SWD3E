@@ -5,7 +5,9 @@ import java.io.FileInputStream;
 import com.badlogic.gdx.utils.XmlReader;
 import com.badlogic.gdx.utils.XmlReader.Element;
 
+import zw.swd.Cache;
 import zw.swd.Config;
+import zw.swd.graphics.Animation;
 import zw.swd.gui.Paper;
 
 public class GUILoader {
@@ -22,6 +24,7 @@ public class GUILoader {
 			Element controlElement=root.getChild(i);
 			if(!controlElement.getName().equals("control")) continue;
 			Paper paper=loadControl(controlElement);
+			Cache.controls.put(paper.getName(), paper);
 		}
 		}
 		catch(Exception e)
@@ -46,6 +49,23 @@ public class GUILoader {
 		{
 		String location_str=controlElement.get("location");
 		paper.setPosition(Float.parseFloat(location_str.split(",")[0]), Float.parseFloat(location_str.split(",")[1]));
+		}
+		int count=controlElement.getChildCount();
+		for(int i=0;i<count;i++)
+		{
+			Element element=controlElement.getChild(i);
+			if(element.getName().equals("img"))
+			{
+				String path=element.get("src");
+				Animation animation=new Animation(Config.resPath+"\\"+path);
+				paper.setAnimation(animation);
+				
+			}
+			if(element.getName().equals("control"))
+			{
+				Paper child=loadControl(element);
+				paper.addActor(child);
+			}
 		}
 		return paper;
 	}
