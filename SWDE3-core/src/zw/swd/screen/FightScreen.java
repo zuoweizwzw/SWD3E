@@ -7,6 +7,8 @@ import zw.swd.game.RoleModel;
 import zw.swd.game.fight.FightModel;
 import zw.swd.graphics.fight.FightMap;
 import zw.swd.graphics.fight.FightRole;
+import zw.swd.gui.FightStatePanel;
+import zw.swd.gui.Picture;
 
 
 
@@ -77,6 +79,7 @@ public class FightScreen extends SWDScreen{
 	@Override
 	public void init() {
 		// TODO Auto-generated method stub
+		this.guiMgr.addActor(Cache.controls.get("fightstateframe"));
 		this.spriteMgr.addActor(new FightMap(this.model.fightMapResID));
 		for(int i=0;i<this.model.allies.size();i++)
 		{
@@ -85,8 +88,11 @@ public class FightScreen extends SWDScreen{
 			fightRole.setCoord(400, 200);
 			fightRole.setAnimation(Cache.fightRoles.get(role.resCode+"/fight/stand_left"));
 			this.spriteMgr.addActor(fightRole);
+			FightStatePanel panel=(FightStatePanel)Cache.controls.get("fightstateframe").findActor("fightstatepanel"+(i+1));
+			panel.initData(role);
+			
 		}
-		this.guiMgr.addActor(Cache.controls.get("fightstateframe"));
+		
 	}
 
 }

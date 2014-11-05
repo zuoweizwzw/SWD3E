@@ -18,4 +18,5 @@ public class RoleModel {
 	public int exp;
 	public int exp_max;
 	public ArrayList<String> magics=new ArrayList<String>();
+	public String fightAvatar="";
 }

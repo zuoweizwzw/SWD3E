@@ -22,6 +22,7 @@ public class TextBox extends Paper{
 		// TODO Auto-generated constructor stub
 		font=FontLoader.font24;
 		font.setMarkupEnabled(true);
+		
 	}
 	@Override
 	public void drawCustomer(Batch batch, float parentAlpha) {

@@ -41,4 +41,9 @@ public abstract class Paper extends Group{
 		this.currentAnimation=animation;
 		if(animation.frames.size()>0) this.setWidth(animation.frames.get(0).keys.get(0).texture.getRegionWidth());
 	}
+	
+	public Animation getAnimation()
+	{
+		return this.currentAnimation;
+	}
 }

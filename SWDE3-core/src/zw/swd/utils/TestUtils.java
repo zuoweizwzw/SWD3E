@@ -1,5 +1,6 @@
 package zw.swd.utils;
 
+import zw.swd.Config;
 import zw.swd.game.RoleModel;
 import zw.swd.game.fight.FightModel;
 
@@ -17,10 +18,11 @@ public class TestUtils {
 		model.description="游戏主角";
 		model.hp=1200;
 		model.hp_max=1600;
-		model.mp=400;
+		model.mp=200;
 		model.mp_max=400;
-		model.energe=100;
-		model.energe=200;
+		model.energe=10;
+		model.energe_max=200;
+		model.fightAvatar=Config.resPath+"\\gui\\75-1.png";
 		}
 		if(resID.equals("002"))
 		{
